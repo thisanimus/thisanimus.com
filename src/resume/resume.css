@@ -1,0 +1,24 @@
+.resume {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		all: unset;
+		box-sizing: border-box;
+	}
+
+	h1 {
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		font-weight: 800;
+		font-size: 0.875rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.25rem;
+	}
+}

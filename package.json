@@ -1,0 +1,18 @@
+{
+	"name": "thisanimus-tnext",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "npx @11ty/eleventy --serve --incremental --quiet"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "latest",
+		"@11ty/eleventy-img": "latest",
+		"dotenv": "latest"
+	}
+}

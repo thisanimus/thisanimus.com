@@ -1,0 +1,62 @@
+main:has(.home) {
+	display: flex;
+	flex-direction: column;
+}
+.home {
+	flex-grow: 1;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	gap: 1rem;
+	grid-template-columns: repeat(5, 1fr);
+	position: relative;
+	overflow: hidden;
+	img {
+		grid-row: 1 / 3;
+		grid-column: 1 / -1;
+		max-width: unset;
+		height: 100%;
+		object-fit: contain;
+		object-position: bottom left;
+		z-index: 0;
+		margin-left: -7%;
+	}
+
+	h1 {
+		pointer-events: none;
+		z-index: 2;
+		grid-row: 1;
+		grid-column: 1 / -1;
+		font-weight: 100;
+		font-size: 12.5vw;
+		letter-spacing: -0.1em;
+		line-height: 1;
+		justify-self: end;
+		padding-inline: 1rem;
+	}
+	.manifesto {
+		z-index: 2;
+		padding: 1rem;
+		grid-row: 3 / 4;
+		grid-column: 2 / -1;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	p {
+		grid-row: -2;
+		line-height: 1.2;
+		letter-spacing: -0.05em;
+	}
+}
+
+@media screen and (min-width: 48rem) {
+	.home {
+		img {
+			grid-column: 1 / -3;
+		}
+		.manifesto {
+			grid-column: -3 / -1;
+			flex-wrap: nowrap;
+		}
+	}
+}

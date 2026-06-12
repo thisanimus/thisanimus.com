@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: white;
+	background: black;
+	font-family: 'IMP Plex Mono', Monospace;
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	height: 100%;
+	min-height: 100dvh;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+}
+body > main {
+	color: black;
+	background: white;
+	flex-grow: 1;
+}

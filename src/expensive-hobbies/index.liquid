@@ -1,0 +1,12 @@
+---
+layout: base.liquid
+tags: ["pages"]
+---
+foo
+<ul>
+  {%- for hobby in collections['expensive-hobbies'] -%}
+    <li>
+      <a href="{{ hobby.url }}">{{ hobby.data.title }}</a>
+    </li>
+  {%- endfor -%}
+</ul>

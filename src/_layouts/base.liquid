@@ -1,0 +1,52 @@
+{%- assign ogImage = 'og.jpg' -%}
+{%- if featuredImage -%}
+  {%- assign ogImage = featuredImage -%}
+{%- endif -%}
+<!doctype html>
+<html lang="en" class="page-{{ page.fileSlug }}">
+  <head>
+    <!-- Base meta tags -->
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="language" content="english">
+    <meta name="description" content="{{ description }}">
+
+    <!-- Reassure the browser that we are mobile-friendly -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="view-transition" content="same-origin">
+
+    <!-- OpenGraph -->
+    <meta property="og:url" content="{{ page.url }}">
+    <meta property="og:site_name" content="Deep Space Robots">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ site.url }}/assets/img/{{ ogImage }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:description" content="{{ description }}">
+    <meta name="twitter:image" content="{{ site.url }}/assets/img/{{ ogImage }}">
+    <meta name="twitter:title" content="{{ title }}">
+
+    <!-- Favicons -->
+    <link rel="icon" href="/assets/favicon/favicon.ico?cachebust=20220519">
+    <link rel="icon" href="/assets/favicon/favicon.svg?cachebust=20220519" type="image/svg+xml" sizes="any">
+    <link rel="apple-touch-icon" href="/assets/favicon/favicon-apple.png?cachebust=20220519">
+    <meta name="theme-color" content="#20242c">
+    <link rel="manifest" href="/assets/manifest.json">
+
+    {% for style in styles %}
+      <link rel="stylesheet" href="{{ style }}">
+    {% endfor %}
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+  <body>
+    {% render 'top-nav.liquid' %}
+    <main>
+      {{ content }}
+    </main>
+  </body>
+</html>

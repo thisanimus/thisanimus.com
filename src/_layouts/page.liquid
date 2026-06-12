@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en" class="page-{{ page.fileSlug }}">
+  <body>
+    <article class="page">
+      <header>
+        <a class="logo-link" href="/" title="home">{% svg 'media/locene-logo.svg' %}</a>
+        {% render 'divider.liquid' %}
+      </header>
+      {{ content }}
+    </article>
+  </body>
+</html>
