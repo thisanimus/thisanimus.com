@@ -40,6 +40,13 @@ const shortcodes = {
 		}
 		return style;
 	},
+
+	sample: function (collection, count = 1) {
+		let items = Array.isArray(collection) ? collection : Object.values(collection || {});
+		let shuffled = [...items].sort(() => Math.random() - 0.5);
+		let result = shuffled.slice(0, count);
+		return count === 1 ? result : result;
+	},
 };
 
 export default async function (eleventyConfig) {
@@ -49,6 +56,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode('image', shortcodes.image);
 	eleventyConfig.addShortcode('svg', shortcodes.svg);
 	eleventyConfig.addFilter('generateProps', shortcodes.generateProps);
+	eleventyConfig.addFilter('sample', shortcodes.sample);
 
 	// passthroughs
 	eleventyConfig.addPassthroughCopy('./assets');

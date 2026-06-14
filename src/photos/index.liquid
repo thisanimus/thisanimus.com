@@ -4,12 +4,15 @@ title: Home
 description: Thisanimus
 date: 2024-09-16
 styles: 
-- photos.css
+- /photos/photos.css
 ---
 <section class="color-image-grid">
+  {% assign randomImages = colorImages | sample: 1 %}
+  {% for colorImage in randomImages %}
+    {% image colorImage.url 'presentation' '800,1200,1500' '' '100vw' 'eager' %}
+  {% endfor %}
+
   {% for colorImage in colorImages %}
-    <button class="color-image" style="--color-accent:{{ colorImage.color.hex }}">
-      {% image colorImage.url 'presentation' '200,400' '' '20vw' %}
-    </button>
+    <button class="color-image-button" style="--color-accent:{{ colorImage.color.hex }}"></button>
   {% endfor %}
 </section>
